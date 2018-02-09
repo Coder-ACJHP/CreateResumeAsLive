@@ -116,3 +116,7 @@ html body {
   .phone, .email, .address {
     margin-left: 5px;
   }
+  
+  .control-label {
+  	float: left;
+  }

@@ -16,48 +16,64 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div style="background-color: white; width: 100%; height: 100%;">
+                <div style="background-color: white; width: 100%; height: 100%; padding: 5px;">
                     <div class="spaces">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="name">Name:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="name" placeholder="Enter name and surname">
-                            </div>
+                    	<div class="form-group">
+                            <label for="name">Picture:</label>
+                             <input type="file" class="form-control" id="picture">
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="job">Your job:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="job" placeholder="Enter your current job">
-                            </div>
+                            <label for="name">Name:</label>
+                             <input type="text" class="form-control" id="name" placeholder="Enter name and surname">
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email:</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" placeholder="Enter email">
-                            </div>
+                            <label for="job">Your job:</label>
+                            <input type="text" class="form-control" id="job" placeholder="Enter your current job">
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="phone">Phone:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
-                            </div>
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="address">Address:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="address" placeholder="Enter address">
-                            </div>
+                            <label for="phone">Phone:</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="about-me">About me:</label>
-                            <div class="col-sm-10">
-                                <textarea type="text" class="form-control" id="about-me" placeholder="Enter something about you"></textarea>
-                            </div>
+                            <label for="address">Address:</label>
+                           <input type="text" class="form-control" id="address" placeholder="Enter address">
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-2" for="work-experience">About me:</label>
-                            <div class="col-sm-10">
-                                <textarea type="text" class="form-control" id="work-experience" placeholder="Enter your work experiences"></textarea>
+                            <label for="about-me">About me:</label>
+                            <textarea class="form-control" id="about-me" placeholder="Enter something about you"></textarea>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="work-experience">Work experience:</label>
+                            <textarea class="form-control" id="work-experience" placeholder="Enter your work experiences"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="education">Education:</label>
+                            <textarea class="form-control" id="education" placeholder="Enter your education"></textarea>
+                        </div>
+                        <div class="form-group" id="link-div">
+                            <label class="input-inline"for="links">Reference link(s):</label>
+                            <div class="row">
+                            	<div class="col-sm-1"><input type="checkbox" class="checkbox-inline" checked id="first-check"></div>
+	                            <div class="col-sm-11">
+	                            	<input type="text" class="form-control" id="addressOne" placeholder="Enter link" >
+	                            </div>
+                            </div><br>
+                            <div class="row">
+                            	<div class="col-sm-1"><input type="checkbox" class="checkbox-inline" value="" id="second-check"></div>
+	                            <div class="col-sm-11">
+	                            	<input type="text" class="form-control" id="addressTwo" placeholder="Enter link" disabled="disabled">
+	                            </div>
+                            </div><br>
+                            <div class="row">
+                            	<div class="col-sm-1"><input type="checkbox" class="checkbox-inline" value="" id="third-check"></div>
+	                            <div class="col-sm-11">
+	                            	<input type="text" class="form-control" id="addressThree" placeholder="Enter link" disabled="disabled">
+	                            </div>
                             </div>
                         </div>
                     </div>
@@ -66,7 +82,7 @@
             <div class="col-lg-8">
                 <div class="spaces">
                     <div class="paper">
-                        <div class="col-lg-4" id="left-side">
+                        <div class="col-lg-4 col-md-4 col-sm-4" id="left-side">
                             <div class="row">
                                 <div class="photo-container">
                                     <div class="photo">
@@ -82,7 +98,7 @@
                                 </section>
                             </div>
                         </div>
-                        <div class="col-lg-8" id="right-side">
+                        <div class="col-lg-8 col-md-8 col-sm-8" id="right-side">
                             <div class="user-name"></div>
                             <div class="current-job"></div>
                             <hr>
@@ -116,12 +132,7 @@
                             <p class="education"></p>
                             <hr>
                             <label for="links" class="topic-label">REFRANCE LINKS :</label>
-                            <p class="links">
-                                <a href=""></a>
-                            </p>
-                            <p class="links">
-                                <a href=""></a>
-                            </p>
+                            <div class="link"></div>
                         </div>
                     </div>
                 </div>
@@ -135,6 +146,16 @@
             });
         }
 
+        $('#picture').change(function() {
+        	var profilePicture = this.files[0];
+        	fileReader = new FileReader();
+        	fileReader.onload = function() {
+        		$('.photo-img').attr("src", fileReader.result);
+        	}
+        	fileReader.readAsDataURL(profilePicture);
+        });
+        
+        
         getTextValAddToCv('#name', '.user-name');
         getTextValAddToCv('#job', '.current-job');
         getTextValAddToCv('#email', '.email');
@@ -142,7 +163,36 @@
         getTextValAddToCv('#address', '.address');
         getTextValAddToCv('#work-experience', '.work-experience');
         getTextValAddToCv('#about-me', '.about-me');
-    </script>
+        getTextValAddToCv('#education', '.education');
+        
+        function enableLinks(checkBox, input) {
+        	if($(checkBox).is(':checked')) {
+        		$(input).removeAttr('disabled');
+            	
+            } else {
+            	$(input).attr('disabled', 'false');
+            }
+        }
+        
+        $('#second-check').change(function() {
+        	enableLinks('#second-check', '#addressTwo');
+        });
+        $('#third-check').change(function() {
+        	enableLinks('#third-check', '#addressThree');
+        });
+        
+        function getInputValAppendToCv(from) {
+        	var address = $(from).val();
+        	var mainLink = $('.link').html();
+        	
+        	var newLink = mainLink + "<p class='links'><a href="+address+">"+address+"</a></p>";
+        	$('.link').html(newLink);
+        }
+        
+        $('#addressOne,#addressTwo,#addressThree').keyup(function() {
+        	getInputValAppendToCv(this);
+        });
+        
+</script>
 </body>
-
 </html>
