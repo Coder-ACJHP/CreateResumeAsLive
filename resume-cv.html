@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resume-cv.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
+    <title>CREATE RESUME</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div style="background-color: white; width: 100%; height: 100%;">
+                    <div class="spaces">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Name:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="name" placeholder="Enter name and surname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="job">Your job:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="job" placeholder="Enter your current job">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="email">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="phone">Phone:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="address">Address:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="address" placeholder="Enter address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="about-me">About me:</label>
+                            <div class="col-sm-10">
+                                <textarea type="text" class="form-control" id="about-me" placeholder="Enter something about you"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="work-experience">About me:</label>
+                            <div class="col-sm-10">
+                                <textarea type="text" class="form-control" id="work-experience" placeholder="Enter your work experiences"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="spaces">
+                    <div class="paper">
+                        <div class="col-lg-4" id="left-side">
+                            <div class="row">
+                                <div class="photo-container">
+                                    <div class="photo">
+                                        <img class="photo-img" src="" alt="profile-image">
+                                    </div>
+                                </div>
+                                <section>
+                                    <div class="headers-label" id="first-header-label">
+                                    </div>
+                                    <p class="headers-text">
+                                        <span class="percent"></span>
+                                    </p>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col-lg-8" id="right-side">
+                            <div class="user-name"></div>
+                            <div class="current-job"></div>
+                            <hr>
+                            <label for="contact" class="topic-label">CONTACT :</label>
+                            <br>
+                            <div class="contact">
+                                <span style="float: left;">
+                                    <img src="email.png" alt="email-icon" id="icons">
+                                    <span class="email"></span>
+                                </span>
+                                <span style="margin-left: 80px;">
+                                    <img src="phone-call.png" alt="phone-icon" id="icons">
+                                    <span class="phone"></span>
+                                </span>
+                            </div>
+                            <p class="contact">
+                                <img src="placeholder.png" alt="location-icon" id="icons">
+                                <span class="address"></span>
+                            </p>
+                            <hr>
+                            <label for="about-me" class="topic-label">ABOUT ME :</label>
+                            <p class="about-me"></p>
+                            <hr>
+                            <label for="work-experience" class="topic-label">WORK EXPERIENCE :</label>
+                            <p class="work-experience">
+                                <ol>
+                                </ol>
+                            </p>
+                            <hr>
+                            <label for="education" class="topic-label">EDUCATION :</label>
+                            <p class="education"></p>
+                            <hr>
+                            <label for="links" class="topic-label">REFRANCE LINKS :</label>
+                            <p class="links">
+                                <a href=""></a>
+                            </p>
+                            <p class="links">
+                                <a href=""></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function getTextValAddToCv(from, to) {
+            $(from).keyup(function () {
+                $(to).html($(from).val());
+            });
+        }
+
+        getTextValAddToCv('#name', '.user-name');
+        getTextValAddToCv('#job', '.current-job');
+        getTextValAddToCv('#email', '.email');
+        getTextValAddToCv('#phone', '.phone');
+        getTextValAddToCv('#address', '.address');
+        getTextValAddToCv('#work-experience', '.work-experience');
+        getTextValAddToCv('#about-me', '.about-me');
+    </script>
+</body>
+
+</html>
