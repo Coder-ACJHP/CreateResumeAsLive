@@ -112,11 +112,16 @@ html body {
     width: 20px;
     height: 20px;
   }
-
-  .phone, .email, .address {
-    margin-left: 5px;
-  }
   
   .control-label {
   	float: left;
+  }
+
+  .glyphicon-remove {
+    color: red;
+    cursor: pointer;
+  }
+
+  #headerOne, #headerTwo, #headerThree {
+    width: 114px;
   }
