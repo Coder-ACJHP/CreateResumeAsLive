@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="resume-cv.css">
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
     <title>CREATE RESUME</title>
@@ -127,9 +126,7 @@
                                 <section>
                                     <div class="headers-label" id="first-header-label">
                                     </div>
-                                    <p class="headers-text">
-                                        <span class="percent"></span>
-                                    </p>
+                                    <div class="skills-div"></div>
                                 </section>
                             </div>
                         </div>
@@ -158,10 +155,7 @@
                             <p class="about-me"></p>
                             <hr>
                             <label for="work-experience" class="topic-label">WORK EXPERIENCE :</label>
-                            <p class="work-experience">
-                                <ol>
-                                </ol>
-                            </p>
+                            <p class="work-experience"></p>
                             <hr>
                             <label for="education" class="topic-label">EDUCATION :</label>
                             <p class="education"></p>
@@ -174,102 +168,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        function getTextValAddToCv(from, to) {
-            $(from).keyup(function () {
-                $(to).html($(from).val());
-            });
-        }
-
-        $('#picture').change(function () {
-            var profilePicture = this.files[0];
-            fileReader = new FileReader();
-            fileReader.onload = function () {
-                $('.photo-img').attr("src", fileReader.result);
-            }
-            fileReader.readAsDataURL(profilePicture);
-        });
-
-
-        getTextValAddToCv('#name', '.user-name');
-        getTextValAddToCv('#job', '.current-job');
-        getTextValAddToCv('#email', '.email');
-        getTextValAddToCv('#phone', '.phone');
-        getTextValAddToCv('#address', '.address');
-        getTextValAddToCv('#work-experience', '.work-experience');
-        getTextValAddToCv('#about-me', '.about-me');
-        getTextValAddToCv('#education', '.education');
-
-        function enableLinks(checkBox, input) {
-            if ($(checkBox).is(':checked')) {
-                $(input).removeAttr('disabled');
-
-            } else {
-                $(input).attr('disabled', 'false');
-                $(input).val('');
-            }
-        }
-
-        $('#second-check').change(function () {
-            enableLinks('#second-check', '#addressTwo');
-        });
-        $('#third-check').change(function () {
-            enableLinks('#third-check', '#addressThree');
-        });
-
-        var counter = 0;
-
-        function getInputValAppendToCv(from) {
-            var address = $(from).val();
-            var mainLink = $('.links-div').html();
-            counter++;
-            var newLink = mainLink + "<p class='link" + counter + "'><a href=" + address + ">" + address + "</a></p>";
-            $('.links-div').html(newLink);
-        }
-
-        $('#addressOne,#addressTwo,#addressThree').keypress(function (e) {
-            if (e.which === 13) {
-                getInputValAppendToCv(this);
-            }
-        });
-
-        function deleteLink(linkId) {
-            switch (linkId) {
-                case 1:
-                    $('.link' + 1).remove();
-                    $('#addressOne').val('');
-                    break;
-
-                case 2:
-                    $('.link' + 2).remove();
-                    $('#addressTwo').val('');
-                    break;
-
-                case 3:
-                    $('.link' + 3).remove();
-                    $('#addressThree').val('');
-                    break;
-            }
-        }
-        
-        function showPopOver(params) {
-            $(params).each(function(i, obj) {
-                $(this).popover({
-                    html : true,
-                    animation : true,
-                    placement : "bottom",
-                    title : $(params).html().toUpperCase(),
-                    content : function() {
-                        return $('#popover-content').html();
-                    }
-                });
-	        });
-        }
-            $(document).ready(function(){
-                $(document).on('focus', '#headerOneText', function(){
-                    getTextValAddToCv(this, '#first-header-label');
-                });
-            });
-    </script>
+    <script type="text/javascript" src="resume-cv.js"></script>
 </body>
 </html>
