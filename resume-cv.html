@@ -5,122 +5,127 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="resume-cv.css">
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Barlow' rel='stylesheet'>
     <title>CREATE RESUME</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div style="background-color: white; width: 100%; height: 100%; padding: 5px;">
-                    <div class="spaces">
-                        <div class="form-group">
-                            <label for="name">Picture:</label>
-                            <input type="file" class="form-control" id="picture">
+        <div class="spaces">
+            <div class="row" id="base-row">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8">
+                        <h1>Create your CV by filling out the form on the left.</h1>
+                        <hr>    
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="name">Profile Picture:</label>
+                        <input type="file" class="form-control" id="picture">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Headers:
+                            <small style="color:lightgray;">exmp : languages, frameworks, skills.</small>
+                        </label>
+                        <br>
+                        <button type="button" class="btn btn-primary" id="headerOne" onclick="showPopOver(this);">Header one</button>
+                        <button type="button" class="btn btn-primary" id="headerTwo" onclick="showPopOver(this);">Header two</button>
+                        <button type="button" class="btn btn-primary" id="headerThree" onclick="showPopOver(this);">Header three</button>
+                        <div id="popover-content" class="hide">
+                            <input type="text" class="form-control" id="headerOneText" placeholder="Ex: LANGUAGES">
+                            <input type="text" class="form-control" id="firstSkill" placeholder="Ex: JAVA 100">
+                            <input type="text" class="form-control" id="secondSkill" placeholder="Ex: PYTHON 70">
+                            <input type="text" class="form-control" id="thirdSkill" placeholder="Ex: JAVASCRIPT 40">
                         </div>
-                        <div class="form-group">
-                            <label for="name">Headers:</label><br>
-                            <button type="button" class="btn btn-primary" id="headerOne" onclick="showPopOver(this);">Header one</button>
-                            <button type="button" class="btn btn-primary" id="headerTwo" onclick="showPopOver(this);">Header two</button>
-                            <button type="button" class="btn btn-primary" id="headerThree" onclick="showPopOver(this);">Header three</button>
-                            <div id="popover-content" class="hide">
-                                <input type="text" class="form-control" id="headerOneText" placeholder="Enter header name">
-                                <input type="text" class="form-control" id="firstSkill" placeholder="Enter header text">
-                                <input type="text" class="form-control" id="secondSkill" placeholder="Enter header text">
-                                <input type="text" class="form-control" id="thirdSkill" placeholder="Enter header text">   
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name and surname">
-                        </div>
-                        <div class="form-group">
-                            <label for="job">Your job:</label>
-                            <input type="text" class="form-control" id="job" placeholder="Enter your current job">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone:</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Address:</label>
-                            <input type="text" class="form-control" id="address" placeholder="Enter address">
-                        </div>
-                        <div class="form-group">
-                            <label for="about-me">About me:</label>
-                            <textarea class="form-control" id="about-me" placeholder="Enter something about you"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" maxlength="14" placeholder="Enter name and surname">
+                    </div>
+                    <div class="form-group">
+                        <label for="job">Your job:</label>
+                        <input type="text" class="form-control" id="job" maxlength="30" placeholder="Enter your current job">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter address">
+                    </div>
+                    <div class="form-group">
+                        <label for="about-me">About me:</label>
+                        <textarea class="form-control" id="about-me" placeholder="Enter something about you"></textarea>
 
-                        </div>
-                        <div class="form-group">
-                            <label for="work-experience">Work experience:</label>
-                            <textarea class="form-control" id="work-experience" placeholder="Enter your work experiences"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="education">Education:</label>
-                            <textarea class="form-control" id="education" placeholder="Enter your education"></textarea>
-                        </div>
-                        <div class="form-group" id="link-div">
-                            <label class="input-inline" for="links">Reference link(s):</label>
-                            <div class="row">
-                                <div class="col-sm-1">
-                                    <input type="checkbox" class="checkbox-inline" checked id="first-check">
-                                </div>
-                                <div class="col-sm-11">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="addressOne" placeholder="Enter first link">
-                                        <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-remove" onclick="deleteLink(1);" title="Delete the link."></i>
-                                        </span>
-                                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="work-experience">Work experience:</label>
+                        <textarea class="form-control" id="work-experience" placeholder="Enter your work experiences"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="education">Education:</label>
+                        <textarea class="form-control" id="education" placeholder="Enter your education"></textarea>
+                    </div>
+                    <div class="form-group" id="link-div">
+                        <label class="input-inline" for="links">Reference link(s):</label>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <input type="checkbox" class="checkbox-inline" checked id="first-check">
+                            </div>
+                            <div class="col-sm-11">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="addressOne" placeholder="Enter first link">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-remove" onclick="deleteLink(1);" title="Delete the link."></i>
+                                    </span>
                                 </div>
                             </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-sm-1">
-                                    <input type="checkbox" class="checkbox-inline" value="" id="second-check">
-                                </div>
-                                <div class="col-sm-11">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="addressTwo" placeholder="Enter second link" disabled="disabled">
-                                        <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-remove" onclick="deleteLink(2);" title="Delete the link."></i>
-                                        </span>
-                                    </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <input type="checkbox" class="checkbox-inline" value="" id="second-check">
+                            </div>
+                            <div class="col-sm-11">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="addressTwo" placeholder="Enter second link" disabled="disabled">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-remove" onclick="deleteLink(2);" title="Delete the link."></i>
+                                    </span>
                                 </div>
                             </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-sm-1">
-                                    <input type="checkbox" class="checkbox-inline" value="" id="third-check">
-                                </div>
-                                <div class="col-sm-11">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="addressThree" placeholder="Enter third link" disabled="disabled">
-                                        <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-remove" onclick="deleteLink(3);" title="Delete the link."></i>
-                                        </span>
-                                    </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <input type="checkbox" class="checkbox-inline" value="" id="third-check">
+                            </div>
+                            <div class="col-sm-11">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="addressThree" placeholder="Enter third link" disabled="disabled">
+                                    <span class="input-group-addon">
+                                        <i class="glyphicon glyphicon-remove" onclick="deleteLink(3);" title="Delete the link."></i>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="spaces">
+                <div class="col-lg-8">
                     <div class="paper">
                         <div class="col-lg-4 col-md-4 col-sm-4" id="left-side">
                             <div class="row">
                                 <div class="photo-container">
                                     <div class="photo">
-                                        <img class="photo-img" src="" alt="profile-image">
+                                        <img class="photo-img" src="" alt="Picture">
                                     </div>
                                 </div>
                                 <section>
@@ -165,9 +170,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-6">
+                        <h2>Download or show your cv as PDF format</h2>
+                        <button class="btn btn-primary btn-block">Download</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <script type="text/javascript" src="resume-cv.js"></script>
 </body>
+
 </html>
