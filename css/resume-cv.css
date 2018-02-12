@@ -37,6 +37,7 @@ html body {
   .paper {
     width:100%;
     height:1000px;
+    margin-right: -15px;
     background:#FFF;
     border: 1px solid lightgray;
     position: relative;
@@ -64,12 +65,16 @@ html body {
   }
   
   #left-side {
+/*   	width: 248px !important; */
+/*     max-width: 248px; */
     height: 100%;
     background-color: #82b9ec;
     border-right:1px solid lightgray;
   }
   
   #right-side {
+/*   	width: 497px !important; */
+/*   	max-width: 497px; */
     height: auto;
     background-color: white;
   }
@@ -152,3 +157,4 @@ html body {
   #headerOne, #headerTwo, #headerThree {
     width: 114px;
   }
+  
