@@ -8,7 +8,7 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     
-    <title>CREATE RESUME</title>
+    <title>RESUME BUILDER</title>
 </head>
 
 <body>
@@ -16,9 +16,21 @@
         <div class="spaces">
             <div class="row" id="base-row">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-8 col-sm-8">
-                        <h1>Create your CV by filling out the form on the left.</h1>
-                        <hr>    
+                    <div class="jumbotron" id="jumbotron">
+                    	<h1>Create your own resume with J.A.C.</h1>
+                    	<p><strong style="font-size: 1.5em;">Resume</strong> provides a summary of your education, work history, credentials, 
+                    		and other accomplishments and skills. There are also optional sections, including 
+                    		a resume objective and career summary statement. Resumes are the most common 
+                    		document requested of applicants in job applications.A resume should be as 
+                    		concise as possible.Typically, a resume is one page long, although sometimes 
+                    		it can be as long as two pages. Often resumes include bulleted lists to keep 
+                    		information concise.Resumes come in a few types, including chronological, 
+                    		functional, and combination formats. Select a format that best fits the type 
+                    		of job you are applying for like this.
+                    	</p>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12">
+                    	<hr> 
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -171,11 +183,20 @@
                	 	</div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-sm-6">
-                        <h2>Download or show your cv as PDF format</h2>
-                        <button class="btn btn-primary btn-block" id="btnPrint">Download</button>
+                	 <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12">
+                    	<hr> 
                     </div>
-                </div>
+                	<div class="col-lg-12">
+                		<div class="well">
+                			<p>HINT : For downloading it as .pdf you have to change the target to 'Save as PDF' from the opening window
+							<button class="btn btn-default btn-md" id="btnPrint">
+								<i class="glyphicon glyphicon-print"></i> 
+								PRINT&nbsp;or&nbsp;<i class="glyphicon glyphicon-download-alt"></i> DWNLD
+							</button>      
+							</p>                  
+                    	</div>
+                	</div>
+                </div>	
             </div>
         </div>
     </div>
