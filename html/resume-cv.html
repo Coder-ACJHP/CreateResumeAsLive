@@ -8,7 +8,7 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     
-    <title>RESUME BUILDER</title>
+    <title>Resume Builder - Coder ACJHP</title>
 </head>
 
 <body>
@@ -16,9 +16,9 @@
         <div class="spaces">
             <div class="row" id="base-row">
                 <div class="row">
-                    <div class="jumbotron" id="jumbotron">
-                    	<h1>Create your own resume with J.A.C.</h1>
-                    	<p><strong style="font-size: 1.5em;">Resume</strong> provides a summary of your education, work history, credentials, 
+                    <div id="customJumbotron">
+                    	<div class="jumbotron-header">Create your own resume</div>
+                    	<p style="font-size: 16px;"><strong style="font-size: 1.5em;">Resume</strong> provides a summary of your education, work history, credentials, 
                     		and other accomplishments and skills. There are also optional sections, including 
                     		a resume objective and career summary statement. Resumes are the most common 
                     		document requested of applicants in job applications.A resume should be as 
@@ -28,6 +28,11 @@
                     		functional, and combination formats. Select a format that best fits the type 
                     		of job you are applying for like this.
                     	</p>
+                    	<div class="row">
+                    		<div class="col-lg-5 col-md-5 col-sm-5 col-xm-5">
+                    			 <p><a href="#" data-toggle="tooltip" data-placement="bottom">How to use J.A.C. Resume Builder?</a></p>
+                    		</div>
+                    	</div>
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xm-12">
                     	<hr> 
@@ -96,7 +101,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="addressOne" placeholder="Enter first link">
                                     <span class="input-group-addon">
-                                        <i class="glyphicon glyphicon-remove" onclick="deleteLink(1);" title="Delete the link."></i>
+                                        <span class="glyphicon glyphicon-remove" onclick="deleteLink(1);" title="Delete the link."></span>
                                     </span>
                                 </div>
                             </div>
@@ -110,7 +115,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="addressTwo" placeholder="Enter second link" disabled="disabled">
                                     <span class="input-group-addon">
-                                        <i class="glyphicon glyphicon-remove" onclick="deleteLink(2);" title="Delete the link."></i>
+                                        <span class="glyphicon glyphicon-remove" onclick="deleteLink(2);" title="Delete the link."></span>
                                     </span>
                                 </div>
                             </div>
@@ -124,7 +129,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="addressThree" placeholder="Enter third link" disabled="disabled">
                                     <span class="input-group-addon">
-                                        <i class="glyphicon glyphicon-remove" onclick="deleteLink(3);" title="Delete the link."></i>
+                                        <span class="glyphicon glyphicon-remove" onclick="deleteLink(3);" title="Delete the link."></span>
                                     </span>
                                 </div>
                             </div>
@@ -188,11 +193,11 @@
                     </div>
                 	<div class="col-lg-12">
                 		<div class="well">
-                			<p>HINT : For downloading it as .pdf you have to change the target to 'Save as PDF' from the opening window
+                			<p>Thank you for using Java Arabic Community Resume Builder.
 							<button class="btn btn-default btn-md" id="btnPrint">
 								<i class="glyphicon glyphicon-print"></i> 
-								PRINT&nbsp;or&nbsp;<i class="glyphicon glyphicon-download-alt"></i> DWNLD
-							</button>      
+								PRINT&nbsp;or&nbsp;<span class="glyphicon glyphicon-download-alt"></span> DWNLD
+							</button> 
 							</p>                  
                     	</div>
                 	</div>
@@ -202,6 +207,14 @@
     </div>
     <script type="text/javascript" src="../js/resume-cv.js"></script>
     <script type="text/javascript">
+    
+	    $(document).ready(function(){
+	        $('[data-toggle="tooltip"]').tooltip({
+	             title: '<li>Press "Enter" to apply on resume after filling the blanks.</li><li>You can erase last inputs in headers and write new value.</li><li>For downloading as ".pdf" you have to change the target to "Save as PDF".</li>',  
+	             html: true
+	        });   
+	    });
+    
 		$(function () {
 		    $("#btnPrint").click(function () {
 		        var contents = $("#print-object").html();
